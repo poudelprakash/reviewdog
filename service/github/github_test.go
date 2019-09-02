@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/go-github/v27/github"
+	"github.com/google/go-github/v28/github"
 	"github.com/kylelemons/godebug/pretty"
 	"github.com/reviewdog/reviewdog"
 	"github.com/reviewdog/reviewdog/service/serviceutil"
@@ -84,12 +84,12 @@ index b380b67..6abc0f1 100644
 @@ -4,6 +4,9 @@ import (
  	"os/exec"
  )
- 
+
 +func TestNewExportedFunc() {
 +}
 +
  var _ DiffService = &DiffString{}
- 
+
  type DiffString struct {
 diff --git a/reviewdog.go b/reviewdog.go
 index 61450f3..f63f149 100644
@@ -98,7 +98,7 @@ index 61450f3..f63f149 100644
 @@ -10,18 +10,18 @@ import (
  	"github.com/reviewdog/reviewdog/diff"
  )
- 
+
 +var TestExportedVarWithoutComment = 1
 +
 +func NewReviewdog(p Parser, c CommentService, d DiffService) *Reviewdog {
@@ -110,7 +110,7 @@ index 61450f3..f63f149 100644
  	c CommentService
  	d DiffService
  }
- 
+
 -func NewReviewdog(p Parser, c CommentService, d DiffService) *Reviewdog {
 -	return &Reviewdog{p: p, c: c, d: d}
 -}
